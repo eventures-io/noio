@@ -1,7 +1,17 @@
 page-detail {
 
+  .scroll-content {
+    background-color: #111111;
+    color: #f3f3f3;
+  }
+
   ul {
     list-style: none;
+  }
+
+  .item-image {
+    width: 100%;
+    height: auto;
   }
 
 }

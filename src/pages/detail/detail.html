@@ -12,8 +12,8 @@
 <ion-content padding>
 
     <div *ngIf="selectedItem" class="selection">
-      <h2 [innerHTML]="selectedItem.title.rendered"></h2>
-      <img src="{{selectedItem.featuredImage}}">
+      <!--h2 [innerHTML]="selectedItem.title.rendered"></h2-->
+      <img class="item-image" src="{{selectedItem.featuredImage}}">
       <div [innerHTML]="selectedItem.content.rendered"></div>
     </div>
 

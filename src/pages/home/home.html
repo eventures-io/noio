@@ -7,11 +7,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <h2 [innerHTML]="item.title.rendered"></h2>
-      <p [innerHTML]="item.excerpt.rendered"></p>
+         <div  [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')', 'height': '25vh',
+         'back-ground-repeat': 'no-repeat', 'background-size': 'cover', 'background-position': 'center'}">
+
+         </div>
     </button>
   </ion-list>
 </ion-content>

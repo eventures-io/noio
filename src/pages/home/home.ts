@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
 
-  url:string = 'http://localhost:8000/wp-json/wp/v2/';
+  url:string = 'http://46.101.15.203/wp-json/wp/v2/';
   items:any;
 
   constructor(public navCtrl:NavController, private http:Http, private nav:NavController) {
@@ -27,7 +27,6 @@ export class HomePage {
 
           var media = item._embedded['wp:featuredmedia'];
           if(media) {
-            console.log(JSON.stringify(media[0]));
             item.featuredImage = media[0].source_url;
           }
           return item;

@@ -1,3 +1,10 @@
 page-home {
-
+  .item,
+  .item-inner,
+  .input-wrapper,
+  .label {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
 }

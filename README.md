@@ -1,13 +1,11 @@
-# ionic2-tabs-and-menu
+# Install issues: 
 
-This is an ionic 2 tabs starter combined with a side menu
+Android SDK installed with brew. Does not install build tools.
 
-<img src="resources/preview/ionic_tabs_and_menu.gif" alt="Preview Gif">
+Solution: 
 
-## Getting Started
+$ android sdk 
 
-* Clone this repository: `git clone https://github.com/Flink91/ionic2-tabs-and-menu.git`
-* run `npm install` from the project root
-* Install the ionic CLI (`npm install -g ionic`)
-* Run `ionic serve` from th project root
-* Profit
+-> choose packages to install
+
+

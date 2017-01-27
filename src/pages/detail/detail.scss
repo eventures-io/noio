@@ -1,17 +1,38 @@
 page-detail {
 
-  .scroll-content {
-    background-color: #111111;
-    color: #f3f3f3;
+  .scroll-content,
+  .fixed-content {
+    margin: 0 0 56px 0!important;
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    margin: 16px 6% 3rem 12% !important;
+
+  }
+
+  h3 {
+    margin: 35px 0  25px 0 !important;
   }
 
   ul {
-    list-style: none;
+    //http://stackoverflow.com/questions/5306640/how-to-set-bullet-colors-in-ul-li-html-lists-via-css-without-using-any-images-or
+    list-style: square none;
+  }
+
+  ul,
+  ol {
+    font-size: 16px;
   }
 
   .item-image {
     width: 100%;
     height: auto;
+  }
+
+  .item-content {
+    padding: 0 16px;
+
   }
 
 }

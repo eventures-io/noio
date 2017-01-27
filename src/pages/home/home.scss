@@ -7,4 +7,39 @@ page-home {
     margin: 0 !important;
     border: none !important;
   }
+
+  .scroll-content,
+  .fixed-content {
+    margin: 0 0 50px 0!important;
+    font-size: 18px;
+  }
+
+  .item-visual {
+    position: relative;
+
+    h3 {
+      position: absolute;
+      top: 70%;
+      z-index: 3;
+      padding: 0 5%;
+      margin: 0;
+      width: 100%;
+      font-size: 2.5rem;
+      text-align: center;
+      display: inline-block;
+      white-space: pre-wrap;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to top, #002f4b,transparent);
+      opacity: .6;
+    }
+  }
+
 }

@@ -27,8 +27,8 @@ $colors: (
   primary: #f65342,
   secondary: #fff37d,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #f3f3f3,
+  dark:       #111111
 );
 
 
@@ -60,7 +60,8 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-@import "ionic.theme.default";
+//@import "ionic.theme.default";
+@import "ionic.theme.dark";
 
 
 // Ionicons

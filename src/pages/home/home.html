@@ -3,16 +3,15 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-         <div  [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')', 'height': '25vh',
+         <div [className]="itemVisual" [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')', 'height': '25vh',
          'back-ground-repeat': 'no-repeat', 'background-size': 'cover', 'background-position': 'center'}">
-
+           <h3>{{item.title.rendered}}</h3>
          </div>
     </button>
   </ion-list>

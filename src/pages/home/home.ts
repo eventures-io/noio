@@ -13,11 +13,15 @@ export class HomePage {
 
   url:string = 'http://46.101.15.203/wp-json/wp/v2/';
   items:any;
+  itemVisual = 'item-visual';
 
   constructor(public navCtrl:NavController, private http:Http, private nav:NavController) {
   }
 
+
   ionViewDidEnter() {
+
+
 
     this.http.get(this.url.concat('posts?_embed'))
       .map(res => res.json())

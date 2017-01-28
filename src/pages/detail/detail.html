@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content (swipe)="swipeEvent($event)">
 
     <div *ngIf="selectedItem" class="selection">
       <h2 [innerHTML]="selectedItem.title.rendered"></h2>

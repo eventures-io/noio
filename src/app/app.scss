@@ -1,13 +1,60 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
-
-
+// Overrides
 .toolbar-background {
   background: rgba(black, 0.2);
   border: none;
 }
 
+/*.action-sheet-wrapper {
+  bottom: 56px !important;
+}*/
+
+.action-sheet-container {
+  margin-bottom: 56px !important;
+  background-color: transparent !important;
+  .action-sheet-group {
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    width: 80%;
+    background-color: color($colors, dark) !important;
+
+  }
+
+  .action-sheet-button {
+    padding: 20px 15px;
+    font-size: larger;
+    border-top: 1px solid color($colors, light);
+
+  }
+  .action-sheet-title {
+    font-size: large;
+    font-style: italic;
+    color: color($colors, light) !important;
+    text-align: center;
+    padding: 25px 0 !important;
+  }
+
+  .button-inner {
+    padding: 10px 0 !important;
+    color: color($colors, light) !important;
+    justify-content: center !important;
+  }
+  .action-sheet-button.activated {
+    background-color: color($colors, dark) !important;
+  }
+
+  .action-sheet-cancel {
+
+    border: none !important;
+
+    .button-inner {
+      padding: 0 !important;
+    }
+
+  }
+}
 
 // App Global Sass
 // --------------------------------------------------

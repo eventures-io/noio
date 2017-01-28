@@ -42,4 +42,11 @@ page-home {
     }
   }
 
+  .filter-button {
+    position: absolute;
+    bottom: 90px;
+    right: 40px;
+    z-index: 6;
+  }
+
 }

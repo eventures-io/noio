@@ -6,6 +6,15 @@ page-detail {
     font-size: 1.9rem;
   }
 
+  .toolbar-background {
+    background: transparent;
+  }
+
+  .header-md:after {
+    content: '';
+    height: 0px;
+  }
+
   h2 {
     margin: 16px 6% 3rem 12% !important;
 

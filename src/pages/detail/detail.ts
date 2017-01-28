@@ -10,8 +10,15 @@ export class DetailPage {
 
   selectedItem: any;
 
-  constructor(private nav: NavController, navParams: NavParams) {
+  constructor(private navCtrl: NavController, navParams: NavParams) {
      this.selectedItem = navParams.get('item');
+  }
+
+  swipeEvent(event) {
+    if (event.direction == 2) {
+      //direction 2 = right to left swipe.
+      this.navCtrl.pop();
+    }
   }
 
 }

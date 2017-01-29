@@ -5,27 +5,48 @@
   <!--</ion-title>-->
   <!--</ion-navbar>-->
 </ion-header>
-
 <ion-content>
   <div class="search-form">
     <h2>Search for a recipe</h2>
-    <div class="button-container">
-      <button class="course-button left">Starters</button>
-      <button class="course-button">Mains</button>
-      <button class="course-button right">Desserts</button>
+    <div class="filter-container">
+      <div class="filter-item left" [class.selected]="courseFilter.starters">
+        <label for="f1">Starters</label>
+        <input type="checkbox" id="f1" [(ngModel)]="courseFilter.starters">
+      </div>
+      <div class="filter-item" [class.selected]="courseFilter.mains">
+        <label for="f2">Mains</label>
+        <input type="checkbox" id="f2" [(ngModel)]="courseFilter.mains">
+      </div>
+      <div class="filter-item right" [class.selected]="courseFilter.desserts">
+        <label for="f3">Desserts</label>
+        <input type="checkbox" id="f3" [(ngModel)]="courseFilter.desserts">
+      </div>
     </div>
-    <div class="button-container lg">
-      <button class="course-button left">Vegetarian</button>
-      <button class="course-button center">Meat</button>
-      <button class="course-button">Seafood</button>
-      <button class="course-button right">Poultry</button>
+    <div class="filter-container lg">
+      <div class="filter-item left" [class.selected]="ingredientsFilter.vegetarian">
+        <label for="f4">Vegetarian</label>
+        <input type="checkbox" id="f4" [(ngModel)]="ingredientsFilter.vegetarian">
+      </div>
+      <div class="filter-item center" [class.selected]="ingredientsFilter.meat">
+        <label for="f5">Meat</label>
+        <input type="checkbox" id="f5" [(ngModel)]="ingredientsFilter.meat">
+      </div>
+      <div class="filter-item" [class.selected]="ingredientsFilter.seafood">
+        <label for="f6">Seafood</label>
+        <input type="checkbox" id="f6" [(ngModel)]="ingredientsFilter.seafood">
+      </div>
+      <div class="filter-item right" [class.selected]="ingredientsFilter.poultry">
+        <label for="f7">Poultry</label>
+        <input type="checkbox" id="f7" [(ngModel)]="ingredientsFilter.poultry">
+      </div>
     </div>
     <ion-item>
       <ion-label stacked>Ingredient or recipe name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="searchText"></ion-input>
     </ion-item>
-    <div class="button-container submit">
-      <button class="submit-button">Search</button>
+    <div class="filter-container submit">
+      <button class="reset-button" (click)="resetSearch()"><ion-icon name="refresh"></ion-icon></button>
+      <button class="submit-button" (click)="submitSearch()"><ion-icon name="return-right"></ion-icon></button>
     </div>
   </div>
   <div class="result-list">

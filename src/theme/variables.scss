@@ -24,11 +24,13 @@ $border-radius: 4px;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary: #f65342,
+  primary: #f63933,
   secondary: #fff37d,
   danger:     #f53d3d,
+  success: #008000,
   light:      #f3f3f3,
-  dark:       #111111
+  dark:       #111111,
+  input: #242424
 );
 
 

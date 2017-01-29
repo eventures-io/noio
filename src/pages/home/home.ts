@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import {DetailPage} from '../detail/detail';
 import { NavController} from 'ionic-angular';
-import { ActionSheetController , Platform} from 'ionic-angular';
-
+import { ActionSheetController} from 'ionic-angular';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -18,7 +17,7 @@ export class HomePage {
   itemVisual = 'item-visual';
 
   constructor(private navCtrl:NavController, private http:Http,
-              public actionSheetCtrl:ActionSheetController, public platform:Platform) {
+              public actionSheetCtrl:ActionSheetController) {
   }
 
 
@@ -39,12 +38,9 @@ export class HomePage {
 
   }
 
-
   ionViewDidEnter() {
     this.loadRecipies(this.url.concat('posts?_embed'));
-
   }
-
 
   itemTapped(event, item) {
     this.navCtrl.push(DetailPage, {
@@ -57,13 +53,26 @@ export class HomePage {
       title: 'Filter the recipe list',
       buttons: [
         {
+          text: 'In Season',
+          handler: () => {
+            console.log('in season clicked');
+          }
+        },
+        {
           text: 'Vegetarian',
           handler: () => {
             this.loadRecipies(this.url.concat('posts?tags=3&_embed'))
             console.log('Vegetarian clicked');
           }
-        }, {
-          text: 'In Season',
+        },
+        {
+          text: 'Meat',
+          handler: () => {
+            console.log('in season clicked');
+          }
+        },
+        {
+          text: 'Seafood',
           handler: () => {
             console.log('in season clicked');
           }

@@ -1,0 +1,41 @@
+<ion-header>
+  <!--<ion-navbar>-->
+  <!--<ion-title>-->
+  <!--<span>Search</span><ion-icon name="search"></ion-icon>-->
+  <!--</ion-title>-->
+  <!--</ion-navbar>-->
+</ion-header>
+
+<ion-content>
+  <div class="search-form">
+    <h2>Search for a recipe</h2>
+    <div class="button-container">
+      <button class="course-button left">Starters</button>
+      <button class="course-button">Mains</button>
+      <button class="course-button right">Desserts</button>
+    </div>
+    <div class="button-container lg">
+      <button class="course-button left">Vegetarian</button>
+      <button class="course-button center">Meat</button>
+      <button class="course-button">Seafood</button>
+      <button class="course-button right">Poultry</button>
+    </div>
+    <ion-item>
+      <ion-label stacked>Ingredient or recipe name</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <div class="button-container submit">
+      <button class="submit-button">Search</button>
+    </div>
+  </div>
+  <div class="result-list">
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+        <div [className]="itemVisual" [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')', 'height': '25vh',
+         'back-ground-repeat': 'no-repeat', 'background-size': 'cover', 'background-position': 'center'}">
+          <h3>{{item.title.rendered}}</h3>
+        </div>
+      </button>
+    </ion-list>
+  </div>
+</ion-content>

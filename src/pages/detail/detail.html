@@ -8,11 +8,9 @@
 </ion-header>
 
 <ion-content (swipe)="swipeEvent($event)">
-
     <div *ngIf="selectedItem" class="selection">
       <h2 [innerHTML]="selectedItem.title.rendered"></h2>
       <img class="item-image" src="{{selectedItem.featuredImage}}">
       <div class="item-content"[innerHTML]="selectedItem.content.rendered"></div>
     </div>
-
 </ion-content>

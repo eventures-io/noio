@@ -1,5 +1,9 @@
 // http://ionicframework.com/docs/v2/theming/
 
+button {
+  color: color($colors, light);
+}
+
 .toolbar-background {
   background: transparent;
   //background: rgba(black, 0.2);

@@ -2,21 +2,16 @@ page-detail {
 
   .scroll-content,
   .fixed-content {
+    margin: 0 0 56px 0!important;
     font-size: 1.9rem;
   }
 
-  .toolbar-background {
-    background: transparent;
-  }
 
-  .header-md:after {
-    content: '';
-    height: 0px;
-  }
 
   h2 {
-    margin: 16px 6% 3rem 12% !important;
-
+    margin: 14px 10px 25px 10px !important;
+    padding-left: 18px;
+    text-align: center;
   }
 
   h3 {

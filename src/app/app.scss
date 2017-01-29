@@ -1,8 +1,14 @@
 // http://ionicframework.com/docs/v2/theming/
 
 .toolbar-background {
-  background: rgba(black, 0.2);
+  background: transparent;
+  //background: rgba(black, 0.2);
   border: none;
+}
+
+.header-md:after {
+  content: '';
+  height: 0px;
 }
 
 .action-sheet-container {
@@ -51,9 +57,7 @@
   }
 }
 
-.list {
-  margin-bottom: 5px;
-}
+
 
 // App Global Sass
 // --------------------------------------------------

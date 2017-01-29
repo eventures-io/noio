@@ -1,14 +1,9 @@
 // http://ionicframework.com/docs/v2/theming/
 
-// Overrides
 .toolbar-background {
   background: rgba(black, 0.2);
   border: none;
 }
-
-/*.action-sheet-wrapper {
-  bottom: 56px !important;
-}*/
 
 .action-sheet-container {
   margin-bottom: 56px !important;
@@ -54,6 +49,10 @@
     }
 
   }
+}
+
+.list {
+  margin-bottom: 5px;
 }
 
 // App Global Sass

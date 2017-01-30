@@ -70,6 +70,10 @@ export class SearchPage {
     console.log(JSON.stringify(this.courseFilter));
     console.log(JSON.stringify(this.ingredientsFilter));
     console.log(JSON.stringify(this.searchText));
+
+    this.selectedIngredients = [];
+    this.selectedCourses = [];
+
     for (var filter in this.courseFilter) {
       if(this.courseFilter[filter]){
         this.selectedCourses.push(filter);
@@ -96,9 +100,11 @@ export class SearchPage {
     this.searchText = "";
     this.selectedIngredients = [];
     this.selectedCourses = [];
-    this.submitted = false;
   }
 
+  resetSubmit() {
+    this.submitted = false;
+  }
 
 
 }

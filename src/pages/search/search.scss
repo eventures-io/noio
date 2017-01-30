@@ -99,7 +99,7 @@ page-search {
     left: 0;
     width: 100%;
     height: 0;
-    background-color: color($colors, dark) !important;
+    background-color: color($colors, dark);
     font-size: 1.3rem;
     z-index: 2;
     transition: height $transition-duration ease-in;

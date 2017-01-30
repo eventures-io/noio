@@ -59,6 +59,19 @@ export class WPService {
     }
   }
 
+  loadRecipesByCategory(category) {
+    var that = this;
+    return Observable.create(observer => {
+      this.http.get(this.baseUrl.concat(`posts?category=${category}&_embed`))
+        .map(res => res.json())
+        .subscribe((data) => {
+          let result = that.mapResultData(data);
+          observer.next(result);
+          observer.complete();
+        });
+    });
+  }
+
   private mapResultData(data){
     return data.map(function (item) {
       var media = item._embedded['wp:featuredmedia'];

@@ -25,8 +25,7 @@ export class IngredientsFilter {
 })
 export class SearchPage {
 
-  url:string = 'http://46.101.15.203/wp-json/wp/v2/';
-  items:any;
+  items:any = [];
   itemVisual = 'item-visual';
   courseFilter : CourseFilter = new CourseFilter();
   ingredientsFilter : IngredientsFilter = new IngredientsFilter();
@@ -39,15 +38,17 @@ export class SearchPage {
 
   }
 
-  loadLatestRecipies() {
-    this.wpService.loadLatestRecipes()
+  loadRecipesByCategory(category) {
+    this.wpService.loadRecipesByCategory(category)
       .subscribe(data => {
-        this.items = data;
+        this.items = this.items.concat(data);
       });
+
   }
 
+
   ionViewDidEnter() {
-    this.loadLatestRecipies();
+
   }
 
   itemTapped(event, item) {
@@ -67,14 +68,17 @@ export class SearchPage {
     for (var filter in this.courseFilter) {
       if(this.courseFilter[filter]){
         this.selectedCourses.push(filter);
+        this.loadRecipesByCategory(filter);
       }
     }
 
     for (var filter in this.ingredientsFilter) {
       if(this.ingredientsFilter[filter]){
         this.selectedIngredients.push(filter);
+
       }
     }
+
     this.submitted =  true;
 
   }
@@ -90,11 +94,15 @@ export class SearchPage {
     this.searchText = "";
     this.selectedIngredients = [];
     this.selectedCourses = [];
+
+    this.items = [];
   }
 
   resetSubmit() {
     this.submitted = false;
   }
+
+
 
 
 }

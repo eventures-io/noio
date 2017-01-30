@@ -12,7 +12,6 @@ import {WPService} from "../../app/wp.service";
 })
 export class HomePage {
 
-  url:string = 'http://46.101.15.203/wp-json/wp/v2/';
   items:any;
   itemVisual = 'item-visual';
 

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import {DetailPage} from '../detail/detail';
 import { NavController} from 'ionic-angular';
 import { ActionSheetController} from 'ionic-angular';
-import {Http} from '@angular/http';
-import 'rxjs/add/operator/map';
+import {WPService} from "../../app/wp.service";
+
 
 
 @Component({
@@ -16,30 +16,27 @@ export class HomePage {
   items:any;
   itemVisual = 'item-visual';
 
-  constructor(private navCtrl:NavController, private http:Http,
-              public actionSheetCtrl:ActionSheetController) {
+  constructor(private navCtrl:NavController, private wpService: WPService,
+              private actionSheetCtrl:ActionSheetController) {
+
   }
 
-
-  loadRecipies(url) {
-    this.http.get(url)
-      .map(res => res.json())
+  loadLatestRecipies() {
+    this.wpService.loadLatestRecipes()
       .subscribe(data => {
         this.items = data;
-        this.items.map(function (item) {
-
-          var media = item._embedded['wp:featuredmedia'];
-          if (media) {
-            item.featuredImage = media[0].source_url;
-          }
-          return item;
-        })
       });
+  }
 
+  loadRecipesByTag(tag){
+    this.wpService.loadRecipesByTag(tag)
+      .subscribe(data => {
+        this.items = data;
+      });
   }
 
   ionViewDidEnter() {
-    this.loadRecipies(this.url.concat('posts?_embed'));
+    this.loadLatestRecipies();
   }
 
   itemTapped(event, item) {
@@ -55,34 +52,30 @@ export class HomePage {
         {
           text: 'In Season',
           handler: () => {
-            console.log('in season clicked');
+              //TODO
           }
         },
         {
           text: 'Vegetarian',
           handler: () => {
-            this.loadRecipies(this.url.concat('posts?tags=3&_embed'))
-            console.log('Vegetarian clicked');
+            this.loadRecipesByTag('vegetarian');
           }
         },
         {
           text: 'Meat',
           handler: () => {
-            console.log('in season clicked');
+            this.loadRecipesByTag('meat');
           }
         },
         {
           text: 'Seafood',
           handler: () => {
-            console.log('in season clicked');
+            this.loadRecipesByTag('seafood');
           }
         },
         {
           text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
+          role: 'cancel'
         }
       ]
     });

@@ -6,6 +6,7 @@ import { SearchPage } from '../pages/search/search';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import {WPService} from "./wp.service";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WPService]
 })
 export class AppModule {}

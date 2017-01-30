@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import {DetailPage} from '../detail/detail';
 import { NavController} from 'ionic-angular';
-import {Http} from '@angular/http';
-import 'rxjs/add/operator/map';
+import {WPService} from '../../app/wp.service'
 
 
 export class CourseFilter {
@@ -36,28 +35,19 @@ export class SearchPage {
   searchText = "";
   submitted: boolean = false;
 
-  constructor(private navCtrl:NavController, private http:Http) {
+  constructor(private navCtrl:NavController, private wpService: WPService) {
 
   }
 
-  // TODO move to service
-  loadRecipies(url) {
-    this.http.get(url)
-      .map(res => res.json())
+  loadLatestRecipies() {
+    this.wpService.loadLatestRecipes()
       .subscribe(data => {
         this.items = data;
-        this.items.map(function (item) {
-          var media = item._embedded['wp:featuredmedia'];
-          if (media) {
-            item.featuredImage = media[0].source_url;
-          }
-          return item;
-        })
       });
   }
 
   ionViewDidEnter() {
-    this.loadRecipies(this.url.concat('posts?_embed'));
+    this.loadLatestRecipies();
   }
 
   itemTapped(event, item) {

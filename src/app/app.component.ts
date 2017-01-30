@@ -17,12 +17,12 @@ export interface PageInterface {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // set our app's pages
-  appPages: PageInterface[] = [
-    { title: 'Home', component: TabsPage, icon: 'calendar' },
-    { title: 'Detail', component: TabsPage, index: 1, icon: 'information-circle' },
-    { title: 'Contact', component: TabsPage, index: 2, icon: 'contacts' }
-  ];
+  // set the menu pages
+  //appPages: PageInterface[] = [
+  //  { title: 'Home', component: TabsPage, icon: 'calendar' },
+  //  { title: 'Detail', component: TabsPage, index: 1, icon: 'information-circle' },
+  //  { title: 'Contact', component: TabsPage, index: 2, icon: 'contacts' }
+  //];
 
   rootPage = TabsPage;
 

@@ -6,7 +6,7 @@
   <!--</ion-navbar>-->
 </ion-header>
 <ion-content>
-  <div class="search-form">
+  <div class="search-form" [ngClass]="{'closed': submitted}">
     <h2>Search for a recipe</h2>
     <div class="filter-container">
       <div class="filter-item left" [class.selected]="courseFilter.starters">
@@ -42,11 +42,15 @@
     </div>
     <ion-item>
       <ion-label stacked>Ingredient or recipe name</ion-label>
-      <ion-input type="text" [(ngModel)]="searchText"></ion-input>
+      <ion-input type="text" maxlength="55" [(ngModel)]="searchText"></ion-input>
     </ion-item>
     <div class="filter-container submit">
-      <button class="reset-button" (click)="resetSearch()"><ion-icon name="refresh"></ion-icon></button>
-      <button class="submit-button" (click)="submitSearch()"><ion-icon name="return-right"></ion-icon></button>
+      <button class="reset-button" (click)="resetSearch()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      <button class="submit-button" (click)="submitSearch()">
+        <ion-icon name="return-right"></ion-icon>
+      </button>
     </div>
   </div>
   <div class="result-list">
@@ -58,5 +62,19 @@
         </div>
       </button>
     </ion-list>
+  </div>
+  <div class="summary" [ngClass]="{'open': submitted}">
+    <div class="summary-header"><h5>Showing search results for:</h5>
+      <button ion-button color="success" (click)="resetSearch()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </div>
+    <ul>
+      <li *ngFor="let filter of selectedCourses"><span class="selected-filter">{{filter}}</span></li>
+      <li *ngFor="let filter of selectedIngredients"><span class="selected-filter">{{filter}}</span></li>
+    </ul>
+    <span class="selected-filter">{{searchText}}</span>
+
+
   </div>
 </ion-content>

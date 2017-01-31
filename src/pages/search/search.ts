@@ -33,25 +33,30 @@ export class SearchPage {
   selectedIngredients = [];
   searchText = "";
   submitted: boolean = false;
+  loading: boolean = false;
 
   constructor(private navCtrl:NavController, private wpService: WPService) {
 
   }
 
   findRecipesByCategory(category) {
+    this.loading = true;
     let catId = this.wpService.getCategoryId(category);
     this.wpService.findRecipes('categories', catId)
       .subscribe(data => {
         this.items = this.items.concat(data);
+        this.loading = false;
       });
 
   }
 
   findRecipesByTags(tag) {
+    this.loading = true;
     let tagId = this.wpService.getTagId(tag);
     this.wpService.findRecipes('tags', tagId)
       .subscribe(data => {
         this.items = this.items.concat(data);
+        this.loading = false;
       });
 
   }

@@ -13,6 +13,7 @@ export class HomePage {
 
   items:any;
   itemVisual = 'item-visual';
+  loading: boolean = false;
 
   constructor(private navCtrl:NavController, private wpService:WPService,
               private actionSheetCtrl:ActionSheetController) {
@@ -20,17 +21,21 @@ export class HomePage {
   }
 
   loadLatestRecipies() {
+    this.loading = true;
     this.wpService.loadLatestRecipes()
       .subscribe(data => {
         this.items = data;
+        this.loading = false;
       });
   }
 
   loadRecipesByTag(tag) {
+    this.loading = true;
     let tagdId = this.wpService.getTagId(tag);
     this.wpService.findRecipes('tags', tagdId)
       .subscribe(data => {
         this.items = data;
+        this.loading = false;
       });
   }
 
@@ -48,12 +53,7 @@ export class HomePage {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Filter the recipe list',
       buttons: [
-        {
-          text: 'In Season',
-          handler: () => {
-            //TODO
-          }
-        },
+
         {
           text: 'Vegetarian',
           handler: () => {
@@ -73,8 +73,17 @@ export class HomePage {
           }
         },
         {
+          text: 'Poultry',
+          handler: () => {
+            this.loadRecipesByTag('poultry');
+          }
+        },
+        {
           text: 'Cancel',
-          role: 'cancel'
+          role: 'cancel',
+          handler: () => {
+            this.loadLatestRecipies();
+          }
         }
       ]
     });

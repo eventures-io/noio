@@ -74,7 +74,11 @@
       <li *ngFor="let filter of selectedIngredients"><span class="selected-filter">{{filter}}</span></li>
     </ul>
     <span class="selected-filter">{{searchText}}</span>
-
-
+  </div>
+  <div class="list-loader" [ngClass]="{'show': loading}">
+    <div class="spinner">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
   </div>
 </ion-content>

@@ -3,12 +3,14 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Rx';
 
+export type QueryType = 'tags' | 'categories'
+
 @Injectable()
 export class WPService {
 
   private baseUrl:string = 'http://46.101.15.203/wp-json/wp/v2/';
 
-  constructor(private http: Http) {
+  constructor(private http:Http) {
 
   }
 
@@ -19,50 +21,65 @@ export class WPService {
       this.http.get(this.baseUrl.concat('posts?_embed'))
         .map(res => res.json())
         .subscribe((data) => {
-        let result = that.mapResultData(data);
-        observer.next(result);
-        observer.complete();
-      });
+          let result = that.mapResultData(data);
+          observer.next(result);
+          observer.complete();
+        });
     });
   }
 
-  loadRecipesByTag(tag) {
+  getTagId(tag) {
     let tagId:number;
     switch (tag) {
       case "vegetarian":
         tagId = 3;
         break;
       case "meat":
-        tagId = 4;
+        tagId = 10;
         break;
       case "seafood":
-        tagId = 5;
+        tagId = 8;
         break;
       case "poultry":
-        tagId = 6;
+        tagId = 9;
         break;
       default:
         console.error(`no case for ${tag}`);
     }
-
-    if(tagId) {
-      var that = this;
-      return Observable.create(observer => {
-        this.http.get(this.baseUrl.concat(`posts?tags=${tagId}&_embed`))
-          .map(res => res.json())
-          .subscribe((data) => {
-            let result = that.mapResultData(data);
-            observer.next(result);
-            observer.complete();
-          });
-      });
-    }
+    return tagId;
   }
 
-  loadRecipesByCategory(category) {
-    var that = this;
+  getCategoryId(category) {
+    let catId:number;
+    switch (category) {
+      case "main":
+        catId = 2;
+        break;
+      case "salad":
+        catId = 4;
+        break;
+      case "soup":
+        catId = 5;
+        break;
+      case "starter":
+        catId = 6;
+        break;
+      case "desert":
+        catId = 7;
+        break;
+      default:
+        console.error(`no case for ${category}`);
+    }
+    return catId;
+  }
+
+
+  //TODO queryValue: Array
+  findRecipes(queryType:QueryType, queryValue:any) {
+    let url = (this.baseUrl.concat(`posts?${queryType}=${queryValue}&_embed`));
+    let that = this;
     return Observable.create(observer => {
-      this.http.get(this.baseUrl.concat(`posts?category=${category}&_embed`))
+      this.http.get(url)
         .map(res => res.json())
         .subscribe((data) => {
           let result = that.mapResultData(data);
@@ -72,7 +89,8 @@ export class WPService {
     });
   }
 
-  private mapResultData(data){
+
+  private mapResultData(data) {
     return data.map(function (item) {
       var media = item._embedded['wp:featuredmedia'];
       if (media) {

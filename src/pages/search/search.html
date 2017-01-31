@@ -9,17 +9,17 @@
   <div class="search-form" [ngClass]="{'closed': submitted}">
     <h2>Search for a recipe</h2>
     <div class="filter-container">
-      <div class="filter-item left" [class.selected]="courseFilter.starters">
+      <div class="filter-item left" [class.selected]="courseFilter.starter">
         <label for="f1">Starters</label>
-        <input type="checkbox" id="f1" [(ngModel)]="courseFilter.starters">
+        <input type="checkbox" id="f1" [(ngModel)]="courseFilter.starter">
       </div>
-      <div class="filter-item" [class.selected]="courseFilter.mains">
+      <div class="filter-item" [class.selected]="courseFilter.main">
         <label for="f2">Mains</label>
-        <input type="checkbox" id="f2" [(ngModel)]="courseFilter.mains">
+        <input type="checkbox" id="f2" [(ngModel)]="courseFilter.main">
       </div>
-      <div class="filter-item right" [class.selected]="courseFilter.desserts">
+      <div class="filter-item right" [class.selected]="courseFilter.dessert">
         <label for="f3">Desserts</label>
-        <input type="checkbox" id="f3" [(ngModel)]="courseFilter.desserts">
+        <input type="checkbox" id="f3" [(ngModel)]="courseFilter.dessert">
       </div>
     </div>
     <div class="filter-container lg">

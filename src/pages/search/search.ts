@@ -5,9 +5,9 @@ import {WPService} from '../../app/wp.service'
 
 
 export class CourseFilter {
-  starters:boolean = false;
-  mains:boolean = false;
-  desserts:boolean = false;
+  starter:boolean = false;
+  main:boolean = false;
+  dessert:boolean = false;
 
 }
 
@@ -38,18 +38,24 @@ export class SearchPage {
 
   }
 
-  loadRecipesByCategory(category) {
-    this.wpService.loadRecipesByCategory(category)
+  findRecipesByCategory(category) {
+    let catId = this.wpService.getCategoryId(category);
+    this.wpService.findRecipes('categories', catId)
       .subscribe(data => {
         this.items = this.items.concat(data);
       });
 
   }
 
-
-  ionViewDidEnter() {
+  findRecipesByTags(tag) {
+    let tagId = this.wpService.getTagId(tag);
+    this.wpService.findRecipes('tags', tagId)
+      .subscribe(data => {
+        this.items = this.items.concat(data);
+      });
 
   }
+
 
   itemTapped(event, item) {
     this.navCtrl.push(DetailPage, {
@@ -58,24 +64,22 @@ export class SearchPage {
   }
 
   submitSearch() {
-    console.log(JSON.stringify(this.courseFilter));
-    console.log(JSON.stringify(this.ingredientsFilter));
-    console.log(JSON.stringify(this.searchText));
 
     this.selectedIngredients = [];
     this.selectedCourses = [];
+    this.items =  [];
 
     for (var filter in this.courseFilter) {
       if(this.courseFilter[filter]){
         this.selectedCourses.push(filter);
-        this.loadRecipesByCategory(filter);
+        this.findRecipesByCategory(filter);
       }
     }
 
     for (var filter in this.ingredientsFilter) {
       if(this.ingredientsFilter[filter]){
         this.selectedIngredients.push(filter);
-
+        this.findRecipesByTags(filter);
       }
     }
 

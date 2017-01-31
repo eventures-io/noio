@@ -5,7 +5,6 @@ import { ActionSheetController} from 'ionic-angular';
 import {WPService} from "../../app/wp.service";
 
 
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -15,7 +14,7 @@ export class HomePage {
   items:any;
   itemVisual = 'item-visual';
 
-  constructor(private navCtrl:NavController, private wpService: WPService,
+  constructor(private navCtrl:NavController, private wpService:WPService,
               private actionSheetCtrl:ActionSheetController) {
 
   }
@@ -27,8 +26,9 @@ export class HomePage {
       });
   }
 
-  loadRecipesByTag(tag){
-    this.wpService.loadRecipesByTag(tag)
+  loadRecipesByTag(tag) {
+    let tagdId = this.wpService.getTagId(tag);
+    this.wpService.findRecipes('tags', tagdId)
       .subscribe(data => {
         this.items = data;
       });
@@ -51,7 +51,7 @@ export class HomePage {
         {
           text: 'In Season',
           handler: () => {
-              //TODO
+            //TODO
           }
         },
         {

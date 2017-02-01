@@ -1,5 +1,6 @@
 page-home,
 page-search {
+
   .item,
   .item-inner,
   .input-wrapper,
@@ -10,15 +11,22 @@ page-search {
   }
 
   .header,
-  .toolbar{
+  .toolbar {
     pointer-events: none;
   }
 
   .scroll-content,
   .fixed-content {
-    margin: 0 0 50px 0!important;
+    margin: 0 0 50px 0 !important;
     font-size: 18px;
   }
+
+  .list {
+    margin-bottom: 5px;
+  }
+}
+
+page-home {
 
   .list-item {
     position: relative;
@@ -132,9 +140,7 @@ page-search {
 
 
 
-  .list {
-    margin-bottom: 5px;
-  }
+
 }
 
 

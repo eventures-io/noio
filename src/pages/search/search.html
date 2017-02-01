@@ -55,12 +55,19 @@
   </div>
   <div class="result-list">
     <ion-list>
-      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-        <div [className]="itemVisual" [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')', 'height': '25vh',
+      <div class="list-item" padding *ngFor="let item of items" >
+        <div [className]="itemVisual" [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')',
          'back-ground-repeat': 'no-repeat', 'background-size': 'cover', 'background-position': 'center'}">
-          <h3>{{item.title.rendered}}</h3>
         </div>
-      </button>
+        <h3>{{item.title.rendered}}</h3>
+        <div class="item-info" [innerHTML]="item.excerpt.rendered">
+        </div>
+        <div class="view-item-button-container">
+        <button class="view-item-button" (click)="showDetail(item)">
+          <span>View recipe</span><ion-icon name="arrow-forward"></ion-icon>
+        </button>
+        </div>
+      </div>
     </ion-list>
   </div>
   <div class="summary" [ngClass]="{'open': submitted}">

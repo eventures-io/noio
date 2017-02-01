@@ -74,7 +74,7 @@ export class SearchPage {
   }
 
 
-  itemTapped(event, item) {
+  showDetail(item) {
     this.navCtrl.push(DetailPage, {
       item: item
     });

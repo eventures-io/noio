@@ -1,7 +1,32 @@
 page-search {
   .scroll-content,
   .fixed-content {
-    //margin-top: 265px !important;
+    margin-bottom: 150px !important;
+  }
+
+  .list-item {
+  }
+
+  .item-visual {
+    height: 20vh;
+  }
+
+  .view-item-button-container{
+     display: flex;
+    justify-content: flex-end;
+  }
+
+  .view-item-button {
+    position: relative;
+    display: flex;
+    padding: 6px 10px;
+    border-radius: $border-radius;
+    border: 1px solid color($colors, light) !important;
+    color: color($colors, light) !important;
+    background-color: transparent !important;
+    span {
+      margin-right: 10px;
+    }
   }
 
   .search-form {

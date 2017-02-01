@@ -1,5 +1,22 @@
-// http://ionicframework.com/docs/v2/theming/
+// Fonts
 
+@font-face {
+  font-family: 'Playfair Display SC';
+  src: url('../assets/fonts/playfair-display/playfair-display-regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Playfair Display SC', serif;
+}
+
+
+// Global styles
 button{
   border: none;
   outline: none;

@@ -55,7 +55,7 @@
   </div>
   <div class="result-list">
     <ion-list>
-      <div class="list-item" padding *ngFor="let item of items" >
+      <div class="list-item" padding *ngFor="let item of items" (swiperight)="showDetail(item)">
         <div [className]="itemVisual" [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')',
          'back-ground-repeat': 'no-repeat', 'background-size': 'cover', 'background-position': 'center'}">
         </div>

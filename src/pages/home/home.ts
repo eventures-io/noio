@@ -64,6 +64,10 @@ export class HomePage {
     });
   }
 
+  swipeLeftEvent(event, item) {
+    this.toggleShowMore(item);
+  }
+
   presentFilterOptions() {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Filter the recipe list',

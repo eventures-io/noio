@@ -15,11 +15,8 @@ export class DetailPage {
 
   }
 
-  swipeEvent(event) {
-    if (event.direction == 2) {
-      //direction 2 = right to left swipe.
+  navigateBack() {
       this.navCtrl.pop();
-    }
   }
 
 }

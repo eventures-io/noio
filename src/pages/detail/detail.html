@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content (swipe)="swipeEvent($event)">
+<ion-content (swipeLeft)="navigateBack()">
     <div *ngIf="selectedItem" class="selection">
       <h2 [innerHTML]="selectedItem.title.rendered"></h2>
       <img class="item-image" src="{{selectedItem.featuredImage}}">

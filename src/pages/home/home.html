@@ -11,14 +11,15 @@
     <span class="list-loader">
       <ion-icon name="refresh"></ion-icon>
     </span>
-    <div class="list-item" *ngFor="let item of items" >
+    <div class="list-item" *ngFor="let item of items" (swiperight)="showDetail(item)">
       <div class="item-info" [innerHTML]="item.excerpt.rendered">
       </div>
       <button class="view-item-button" (click)="showDetail(item)">
         <span>View recipe</span><ion-icon name="arrow-forward"></ion-icon>
       </button>
-      <div [ngClass]="{'show-more': item.showExcerpt}" [className]="itemVisual" [ngStyle]="{'background-image': 'url(' + item.featuredImage + ')',
-         'back-ground-repeat': 'no-repeat', 'background-size': 'cover', 'background-position': 'center'}">
+      <div [ngClass]="{'show-more': item.showExcerpt}" [className]="itemVisual" [ngStyle]="{'background-image':
+      'url(' + item.featuredImage + ')', 'back-ground-repeat': 'no-repeat', 'background-size': 'cover',
+      'background-position': 'center'}" (swipeleft)="toggleShowMore(item)">
         <h3>{{item.title.rendered}}</h3>
         <button class="more-button" (click)="toggleShowMore(item)">
           <ion-icon name="more"></ion-icon>

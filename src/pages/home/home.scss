@@ -9,18 +9,33 @@ page-search {
     border: none !important;
   }
 
+  .header,
+  .toolbar{
+    pointer-events: none;
+  }
+
   .scroll-content,
   .fixed-content {
     margin: 0 0 50px 0!important;
     font-size: 18px;
   }
 
-  .item-visual {
+  .list-item {
     position: relative;
+  }
+
+  .item-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: left $transition-duration ease-in-out;
+
 
     h3 {
       position: absolute;
-      top: 70%;
+      top: 65%;
       z-index: 3;
       padding: 0 5%;
       margin: 0;
@@ -43,12 +58,79 @@ page-search {
     }
   }
 
+  .item-visual.show-more {
+     left: -90%;
+  }
+
+  .item-info {
+    position: relative;
+    height: 25vh;
+    border-bottom: 1px solid color($colors, dark);
+
+    padding: 16px 16px 16px 10%;
+    p {
+      font-size: 16px;
+      padding-left: 16px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+  }
+
+  .view-item-button {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    padding: 6px 10px;
+    border-radius: $border-radius;
+    border: 1px solid color($colors, light) !important;
+    color: color($colors, light) !important;
+    background-color: transparent !important;
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  .more-button {
+    position: relative;
+    background-color: transparent;
+    color: white !important;
+    font-size: 30px;
+    margin-top: 16px;
+    padding: 0 16px;
+    float: right;
+    cursor: pointer;
+    z-index: 6;
+  }
+
+  $font-size: 26px;
+  $line-height: 1.2;
+  $lines-to-show: 2;
+
+  .item-visual {
+    h3 {
+      display: block; /* Fallback for non-webkit */
+      display: -webkit-box;
+      max-width: 400px;
+      height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+      margin: 0 auto;
+      font-size: $font-size;
+      line-height: $line-height;
+      -webkit-line-clamp: $lines-to-show;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
   .filter-button {
     position: absolute;
     bottom: 90px;
     right: 40px;
     z-index: 6;
   }
+
+
 
   .list {
     margin-bottom: 5px;

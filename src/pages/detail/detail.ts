@@ -12,6 +12,7 @@ export class DetailPage {
 
   constructor(private navCtrl: NavController, navParams: NavParams) {
      this.selectedItem = navParams.get('item');
+
   }
 
   swipeEvent(event) {

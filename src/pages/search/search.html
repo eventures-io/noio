@@ -64,7 +64,13 @@
     </ion-list>
   </div>
   <div class="summary" [ngClass]="{'open': submitted}">
-    <div class="summary-header"><h5>Showing search results for:</h5>
+    <div class="summary-header" *ngIf="items.length === 0">
+      <h5>No results for :</h5>
+      <button ion-button color="success" (click)="resetSubmit()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </div>
+    <div class="summary-header" *ngIf="items.length > 0"><h5>Showing search results for:</h5>
       <button ion-button color="success" (click)="resetSubmit()">
         <ion-icon name="refresh"></ion-icon>
       </button>
@@ -73,7 +79,7 @@
       <li *ngFor="let filter of selectedCourses"><span class="selected-filter">{{filter}}</span></li>
       <li *ngFor="let filter of selectedIngredients"><span class="selected-filter">{{filter}}</span></li>
     </ul>
-    <span class="selected-filter">{{searchText}}</span>
+    <span class="selected-filter" *ngIf="searchText">{{searchText}}</span>
   </div>
   <div class="list-loader" [ngClass]="{'show': loading}">
     <div class="spinner">

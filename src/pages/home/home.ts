@@ -24,7 +24,7 @@ export class HomePage {
     this.loading = true;
     this.wpService.loadLatestRecipes()
       .subscribe(data => {
-        this.items = data;
+        this.items = data
         this.loading = false;
       });
   }
@@ -43,9 +43,24 @@ export class HomePage {
     this.loadLatestRecipies();
   }
 
-  itemTapped(event, item) {
+  showDetail(item) {
     this.navCtrl.push(DetailPage, {
       item: item
+    });
+    setTimeout(() => {
+      item.showExcerpt = false;
+    }, 500);
+  }
+
+  toggleShowMore(item) {
+    let showExcerpt = item.showExcerpt;
+    this.resetShowExcerpt();
+    item.showExcerpt = !showExcerpt;
+  }
+
+  resetShowExcerpt() {
+     this.items.forEach(function(item){
+      item.showExcerpt =  false;
     });
   }
 

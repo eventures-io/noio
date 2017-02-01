@@ -39,6 +39,8 @@ export class SearchPage {
 
   }
 
+
+  //TODO rx combine
   findRecipesByCategory(category) {
     this.loading = true;
     let catId = this.wpService.getCategoryId(category);
@@ -61,6 +63,16 @@ export class SearchPage {
 
   }
 
+  findRecipesByText(searchText) {
+    this.loading = true;
+    this.wpService.findRecipes('search', searchText)
+      .subscribe(data => {
+        this.items = this.items.concat(data);
+        this.loading = false;
+      });
+
+  }
+
 
   itemTapped(event, item) {
     this.navCtrl.push(DetailPage, {
@@ -70,9 +82,11 @@ export class SearchPage {
 
   submitSearch() {
 
+    //TODO: if any filter selected
+
     this.selectedIngredients = [];
     this.selectedCourses = [];
-    this.items =  [];
+    this.items = [];
 
     for (var filter in this.courseFilter) {
       if(this.courseFilter[filter]){
@@ -86,6 +100,10 @@ export class SearchPage {
         this.selectedIngredients.push(filter);
         this.findRecipesByTags(filter);
       }
+    }
+
+    if(this.searchText && this.searchText.length > 0) {
+      this.findRecipesByText(this.searchText);
     }
 
     this.submitted =  true;

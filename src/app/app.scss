@@ -1,7 +1,12 @@
 // http://ionicframework.com/docs/v2/theming/
 
-button {
-  color: color($colors, light);
+button{
+  border: none;
+  outline: none;
+}
+
+p {
+  color: color($colors, light) !important;
 }
 
 .toolbar-background {
@@ -23,7 +28,7 @@ button {
     margin-left: 10%;
     margin-bottom: 10px;
     width: 80%;
-    background-color: color($colors, dark) !important;
+    background-color: rgba(color($colors, dark), 0.9) !important;
 
   }
 
@@ -47,7 +52,7 @@ button {
     justify-content: center !important;
   }
   .action-sheet-button.activated {
-    background-color: color($colors, dark) !important;
+    background-color: rgba(color($colors, dark), 0.9) !important;
   }
 
   .action-sheet-cancel {
@@ -62,15 +67,16 @@ button {
 }
 
 .list-loader {
-   position: absolute;
-   display: none;
-   height: 10px;
-   width: 100%;
-   top: 40%;
+  position: absolute;
+  display: none;
+  height: 10px;
+  width: 100%;
+  top: 40%;
+  z-index: -1;
 }
 
 .show {
-   display: block;
+  display: block;
 }
 
 .spinner {
@@ -98,33 +104,42 @@ button {
 }
 
 @-webkit-keyframes sk-cubemove {
-  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
-  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
-  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
-  100% { -webkit-transform: rotate(-360deg) }
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+  }
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+  }
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+  }
+  100% {
+    -webkit-transform: rotate(-360deg)
+  }
 }
 
 @keyframes sk-cubemove {
   25% {
     transform: translateX(42px) rotate(-90deg) scale(0.5);
     -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-  } 50% {
-      transform: translateX(42px) translateY(42px) rotate(-179deg);
-      -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
-    } 50.1% {
-        transform: translateX(42px) translateY(42px) rotate(-180deg);
-        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-      } 75% {
-          transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-          -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-        } 100% {
-            transform: rotate(-360deg);
-            -webkit-transform: rotate(-360deg);
-          }
+  }
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
 }
-
-
-
 
 // App Global Sass
 // --------------------------------------------------

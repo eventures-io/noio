@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Rx';
 
-export type QueryType = 'tags' | 'categories'
+export type QueryType = 'tags' | 'categories' | 'search'
 
 @Injectable()
 export class WPService {
@@ -64,7 +64,7 @@ export class WPService {
       case "starter":
         catId = 6;
         break;
-      case "desert":
+      case "dessert":
         catId = 7;
         break;
       default:
@@ -95,6 +95,7 @@ export class WPService {
       var media = item._embedded['wp:featuredmedia'];
       if (media) {
         item.featuredImage = media[0].source_url;
+        item.showExcerpt = false;
       }
       return item;
     })

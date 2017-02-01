@@ -101,6 +101,7 @@ page-search {
     height: 0;
     background-color: color($colors, dark);
     font-size: 1.3rem;
+    padding: 0 16px;
     z-index: 2;
     transition: height $transition-duration ease-in;
 
@@ -108,7 +109,6 @@ page-search {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
 
       button {
         position: relative;

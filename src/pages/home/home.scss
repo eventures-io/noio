@@ -43,7 +43,7 @@ page-home {
 
     h3 {
       position: absolute;
-      top: 65%;
+      bottom: 16px;
       z-index: 3;
       padding: 0 5%;
       margin: 0;
@@ -86,6 +86,8 @@ page-home {
 
   .view-item-button {
     position: absolute;
+    display: flex;
+    align-items: center;
     bottom: 16px;
     right: 16px;
     display: flex;
@@ -109,26 +111,6 @@ page-home {
     float: right;
     cursor: pointer;
     z-index: 6;
-  }
-
-  $font-size: 26px;
-  $line-height: 1.2;
-  $lines-to-show: 2;
-
-  .item-visual {
-    h3 {
-      display: block; /* Fallback for non-webkit */
-      display: -webkit-box;
-      max-width: 100%;
-      height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-      margin: 0 auto;
-      font-size: $font-size;
-      line-height: $line-height;
-      -webkit-line-clamp: $lines-to-show;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
   }
 
   .filter-button {

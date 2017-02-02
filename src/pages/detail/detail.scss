@@ -1,12 +1,5 @@
 page-detail {
 
-  .scroll-content,
-  .fixed-content {
-    margin: 0 0 56px 0!important;
-    font-size: 1.9rem;
-  }
-
-
 
   h2 {
     margin: 14px 10px 25px 10px !important;
@@ -36,6 +29,10 @@ page-detail {
   .item-content {
     padding: 0 16px;
 
+  }
+
+  .selection {
+    padding-bottom: 20px;
   }
 
 }

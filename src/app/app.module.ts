@@ -3,7 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { DetailPage } from '../pages/detail/detail';
 import { SearchPage } from '../pages/search/search';
-import { ContactPage } from '../pages/contact/contact';
+import { ShoppingListPage } from '../pages/shopping-list/shopping.list';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {WPService} from "./wp.service";
@@ -13,7 +13,7 @@ import {WPService} from "./wp.service";
     MyApp,
     DetailPage,
     SearchPage,
-    ContactPage,
+    ShoppingListPage,
     HomePage,
     TabsPage
   ],
@@ -25,7 +25,7 @@ import {WPService} from "./wp.service";
     MyApp,
     DetailPage,
     SearchPage,
-    ContactPage,
+    ShoppingListPage,
     HomePage,
     TabsPage
   ],

@@ -12,6 +12,8 @@ page-search {
 
   .header,
   .toolbar {
+    background-color: transparent;
+    border: none;
     pointer-events: none;
   }
 
@@ -86,19 +88,9 @@ page-home {
 
   .view-item-button {
     position: absolute;
-    display: flex;
-    align-items: center;
     bottom: 16px;
     right: 16px;
-    display: flex;
-    padding: 6px 10px;
-    border-radius: $border-radius;
-    border: 1px solid color($colors, light) !important;
-    color: color($colors, light) !important;
-    background-color: transparent !important;
-    span {
-      margin-right: 10px;
-    }
+    @extend .outlined-button;
   }
 
   .more-button {

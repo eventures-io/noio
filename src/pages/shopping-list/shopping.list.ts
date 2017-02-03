@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
-//import { NavController } from 'ionic-angular';
+import { FormsModule } from '@angular/forms';
+import {NavParams, NavController} from "ionic-angular";
+import {ShoppingListService} from "../../app/shopping-list-service";
 
 @Component({
   selector: 'page-shopping-list',
@@ -8,8 +9,22 @@ import { Component } from '@angular/core';
 })
 export class ShoppingListPage {
 
-  constructor() {
+  shoppingLists = [];
 
+  constructor(private navCtrl:NavController, navParams:NavParams, private shoppingListService: ShoppingListService) {
+    let shoppingList = navParams.get('shoppingList');
+    if (shoppingList) {
+      this.shoppingListService.addToList(shoppingList);
+    }
+    this.shoppingLists = this.shoppingListService.shoppingList;
   }
 
+
+  deleteRecipe(index) {
+    this.shoppingLists = this.shoppingListService.removeRecipe(index);
+  }
+
+  deleteIngredient(recipeIndex, ingredientIndex){
+    this.shoppingLists = this.shoppingListService.deleteIngredient(recipeIndex, ingredientIndex);
+  }
 }

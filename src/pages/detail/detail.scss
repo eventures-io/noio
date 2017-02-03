@@ -1,38 +1,56 @@
 page-detail {
 
-
-  h2 {
-    margin: 14px 10px 25px 10px !important;
-    padding-left: 30px;
-    text-align: center;
+  .header,
+  .toolbar {
+    background-color: transparent;
+    border: none;
   }
 
-  h3 {
-    margin: 35px 0  25px 0 !important;
-  }
 
-  ul {
-    //http://stackoverflow.com/questions/5306640/how-to-set-bullet-colors-in-ul-li-html-lists-via-css-without-using-any-images-or
-    list-style: square none;
-  }
-
-  ul,
-  ol {
-    font-size: 16px;
-  }
-
-  .item-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .item-content {
-    padding: 0 16px;
-
-  }
-
-  .selection {
+  .recipe-detail {
     padding-bottom: 20px;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h2 {
+      margin: 14px 10px 25px 10px !important;
+      padding-left: 30px;
+      text-align: center;
+    }
+
+    .export-button {
+      @extend .outlined-button;
+      float: right;
+      margin: 16px;
+    }
+
+    h3 {
+      margin: 35px 0 25px 0 !important;
+    }
+
+    ul {
+      //http://stackoverflow.com/questions/5306640/how-to-set-bullet-colors-in-ul-li-html-lists-via-css-without-using-any-images-or
+      list-style: square none;
+    }
+
+    ul,
+    ol {
+      font-size: 16px;
+    }
+
+    .item-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .item-content {
+      padding: 0 16px;
+
+    }
   }
+
 
 }

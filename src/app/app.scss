@@ -20,6 +20,19 @@ h5 {
 button{
   border: none;
   outline: none;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: $border-radius;
+  color: color($colors, light);
+  span {
+    margin-right: 10px;
+  }
+}
+
+.outlined-button {
+  border: 1px solid color($colors, light) !important;
+  background-color: transparent !important;
 }
 
 p {

@@ -1,16 +1,20 @@
 <ion-header>
   <ion-navbar>
     <!--<button ion-button menuToggle>-->
-      <!--<ion-icon name="menu"></ion-icon>-->
+    <!--<ion-icon name="menu"></ion-icon>-->
     <!--</button>-->
 
   </ion-navbar>
 </ion-header>
 
 <ion-content (swipeLeft)="navigateBack()">
-    <div *ngIf="selectedItem" class="selection">
-      <h2 [innerHTML]="selectedItem.title.rendered"></h2>
-      <img class="item-image" src="{{selectedItem.featuredImage}}">
-      <div class="item-content"[innerHTML]="selectedItem.content.rendered"></div>
-    </div>
+  <section *ngIf="selectedItem" class="recipe-detail">
+    <h2 [innerHTML]="selectedItem.title.rendered"></h2>
+    <img class="item-image" src="{{selectedItem.featuredImage}}">
+    <button class="export-button"(click)="exportIngredientsToShoppingList()">
+      <span>Export to shopping list</span>
+      <ion-icon name="list"></ion-icon>
+    </button>
+    <div class="item-content" [innerHTML]="selectedItem.content.rendered"></div>
+  </section>
 </ion-content>

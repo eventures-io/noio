@@ -25,13 +25,7 @@ page-search {
 
   .view-item-button {
     position: relative;
-    display: flex;
-    align-items: center;
-    padding: 6px 10px;
-    border-radius: $border-radius;
-    border: 1px solid color($colors, light) !important;
-    color: color($colors, light) !important;
-    background-color: transparent !important;
+    @extend .outlined-button;
     span {
       margin-right: 10px;
     }
@@ -118,13 +112,10 @@ page-search {
   }
 
   .reset-button {
-    display: flex;
-    align-items: center;
-    padding: 6px 20px !important;
     margin-right: 20px;
     background-color: color($colors, input);
-    color: color($colors, light);
-    font-size: 16px;
+
+    font-size: 14px;
   }
 
   .submit-button {

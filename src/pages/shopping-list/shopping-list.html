@@ -4,15 +4,25 @@
       <ion-icon name="settings"></ion-icon>
     </button>
     <ion-title>
-      Contact
+     Shopping List
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      Shopping listitems here
-    </ion-item>
+     <h5 *ngIf="shoppingLists.length === 0">Your shopping list is currently empty</h5>
+     <section *ngFor="let list of shoppingLists; let i = index;" class="recipe-section">
+       <header>
+         <h5 [innerHTML]="list.recipeTitle"></h5><ion-icon name="close-circle" (click)="deleteRecipe(i)"></ion-icon>
+       </header>
+       <ul class="ingredients-list">
+         <li *ngFor="let ingredient of list.ingredientsList; let j = index;">
+                 <div class="ingredient"><input type="text" [(ngModel)]="ingredient.text">
+                   <ion-icon name="close-circle" (click)="deleteIngredient(i, j)"></ion-icon>
+                 </div>
+         </li>
+       </ul>
+     </section>
   </ion-list>
 </ion-content>

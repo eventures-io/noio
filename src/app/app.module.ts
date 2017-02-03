@@ -7,6 +7,7 @@ import { ShoppingListPage } from '../pages/shopping-list/shopping.list';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {WPService} from "./wp.service";
+import {ShoppingListService} from "./shopping-list-service";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,6 @@ import {WPService} from "./wp.service";
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WPService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WPService, ShoppingListService]
 })
 export class AppModule {}

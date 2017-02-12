@@ -1,10 +1,26 @@
 // Fonts
-
 @font-face {
   font-family: 'Playfair Display SC';
   src: url('../assets/fonts/playfair-display/playfair-display-regular.ttf');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Slabo 27px';
+  src: url('../assets/fonts/slabo-27px/slabo27-regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../assets/fonts/sources-sans-pro/source-sans-pro-regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  font-family: 'Playfair Display SC', serif;
 }
 
 h1,
@@ -15,9 +31,8 @@ h5 {
   font-family: 'Playfair Display SC', serif;
 }
 
-
 // Global styles
-button{
+button {
   border: none;
   outline: none;
   display: flex;
@@ -88,11 +103,9 @@ p {
   .action-sheet-cancel {
 
     border: none !important;
-
     .button-inner {
       padding: 0 !important;
     }
-
   }
 }
 

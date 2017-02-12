@@ -7,7 +7,7 @@
 </ion-header>
 <ion-content>
   <div class="search-form" [ngClass]="{'closed': submitted}">
-    <h2>Search for a recipe</h2>
+    <h5>Search for a recipe</h5>
     <div class="filter-container">
       <div class="filter-item left" [class.selected]="courseFilter.starter">
         <label for="f1">Starters</label>
@@ -77,7 +77,7 @@
         <ion-icon name="refresh"></ion-icon>
       </button>
     </div>
-    <div class="summary-header" *ngIf="items.length > 0"><h5>Showing search results for:</h5>
+    <div class="summary-header" *ngIf="items.length > 0"><h5>{{items.length}} search results for:</h5>
       <button ion-button color="success" (click)="resetSubmit()">
         <ion-icon name="refresh"></ion-icon>
       </button>

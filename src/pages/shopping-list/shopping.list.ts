@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import {NavParams, NavController} from "ionic-angular";
 import {ShoppingListService} from "../../app/shopping-list-service";
 

@@ -6,6 +6,10 @@ page-detail {
     border: none;
   }
 
+  .scroll-content {
+    margin-top: 0 !important;
+  }
+
 
   .recipe-detail {
     padding-bottom: 20px;
@@ -21,10 +25,14 @@ page-detail {
       text-align: center;
     }
 
+    .export-button-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
     .export-button {
       @extend .outlined-button;
-      float: right;
-      margin: 16px;
+      margin: 16px 16px -16px 0;
     }
 
     h3 {

@@ -50,7 +50,7 @@ page-home {
       padding: 0 5%;
       margin: 0;
       width: 100%;
-      font-size: 2.5rem;
+      font-size: 2rem;
       text-align: center;
       display: inline-block;
       white-space: pre-wrap;
@@ -63,8 +63,9 @@ page-home {
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: linear-gradient(to top, #002f4b,transparent);
-      opacity: .6;
+      height: 100%;
+      background-image: linear-gradient(to top, black,transparent);
+      opacity: .9;
     }
   }
 
@@ -75,20 +76,20 @@ page-home {
   .item-info {
     position: relative;
     height: 25vh;
+    overflow: hidden;
     border-bottom: 1px solid color($colors, dark);
-
-    padding: 16px 16px 16px 10%;
+    padding: 0 10px 10px 10%;
     p {
-      font-size: 16px;
+      font-size: 1.3rem;
       padding-left: 16px;
       white-space: pre-wrap;
-      line-height: 1.6;
+      line-height: 1.4;
     }
   }
 
   .view-item-button {
     position: absolute;
-    bottom: 16px;
+    bottom: 10px;
     right: 16px;
     @extend .outlined-button;
   }

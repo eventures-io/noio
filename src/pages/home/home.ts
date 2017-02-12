@@ -40,6 +40,7 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
+    //this.navCtrl.popAll();
     this.loadLatestRecipies();
   }
 

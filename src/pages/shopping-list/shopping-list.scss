@@ -13,6 +13,12 @@ page-shopping-list {
     font-size: 20px;
   }
 
+  h5 {
+    font-family: 'Slabo 27px', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+
   .icon:hover {
     color: color($colors, danger);
   }

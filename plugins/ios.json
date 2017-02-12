@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.eventures.turnip"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.eventures.turnip"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "io.eventures.turnip"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.eventures.turnip"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.eventures.turnip"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "io.eventures.turnip"
+        }
+    },
+    "dependent_plugins": {}
+}

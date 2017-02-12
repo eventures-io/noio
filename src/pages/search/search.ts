@@ -39,6 +39,10 @@ export class SearchPage {
 
   }
 
+  ionViewDidEnter() {
+    //this.navCtrl.popAll();
+
+  }
 
   //TODO rx combine
   findRecipesByCategory(category) {

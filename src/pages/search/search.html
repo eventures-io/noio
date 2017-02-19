@@ -73,7 +73,7 @@
   <div class="summary" [ngClass]="{'open': submitted}">
     <div class="summary-header" *ngIf="items.length === 0">
       <h5>No results for :</h5>
-      <button ion-button color="success" (click)="resetSubmit()">
+      <button ion-button class="reset-btn-round" color="success" (click)="resetSubmit()">
         <ion-icon name="refresh"></ion-icon>
       </button>
     </div>

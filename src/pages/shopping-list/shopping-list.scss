@@ -3,9 +3,6 @@ page-shopping-list {
   .scroll-content {
     margin-top: 40px;
     padding: 0 16px;
-    .list{
-      margin: 0;
-    }
   }
 
   .icon {
@@ -41,33 +38,46 @@ page-shopping-list {
   }
 
   .ingredients-list {
-    list-style: square none;
-    padding: 0 16px ;
+    list-style: none;
+    margin: 0 0 16px 0;
+    padding: 0;
 
+    li {
+      margin: 0;
+      width: 100%;
+
+    }
 
     .ingredient {
-      position: relative;
-      top: -18px;
       display: flex;
     }
 
-    input {
+    input[type='text'] {
       border: none;
       background-color: transparent;
       width: 90%;
-      margin-right: 20px;
+      margin: 0 20px 0 5px;
+
+    }
+
+    input[type='checkbox'] {
+      position: relative;
+      top: 8px;
+    }
+
+    input[type='checkbox']:checked {
+      background-color: color($colors, success);
     }
 
     input:focus {
       background-color: color($colors, input);
     }
 
-
-    li {
-      margin: 0 16px;
-      width: 100%;
-
+    .strike{
+      text-decoration: line-through;
     }
+
+
   }
 
 

@@ -18,7 +18,8 @@
        </header>
        <ul class="ingredients-list">
          <li *ngFor="let ingredient of list.ingredientsList; let j = index;">
-                 <div class="ingredient"><input type="text" [(ngModel)]="ingredient.text">
+                 <div class="ingredient"><input type="checkbox" [(ngModel)]="ingredient.checked">
+                   <input type="text" [(ngModel)]="ingredient.text" [ngClass]="{'strike': ingredient.checked}">
                    <ion-icon name="close-circle" (click)="deleteIngredient(i, j)"></ion-icon>
                  </div>
          </li>

@@ -59,7 +59,7 @@ export class MyApp {
     if (Splashscreen) {
       setTimeout(() => {
         Splashscreen.hide();
-      }, 3000);
+      }, 1000);
     }
   };
 

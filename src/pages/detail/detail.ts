@@ -2,6 +2,7 @@ import { Component, ElementRef } from '@angular/core';
 import {NavParams} from "ionic-angular/index";
 import {NavController} from "ionic-angular/index";
 import {ShoppingListPage} from "../shopping-list/shopping.list";
+import {ShoppingListService} from "../../app/shopping-list-service";
 
 @Component({
   selector: 'page-detail',
@@ -11,7 +12,8 @@ export class DetailPage {
 
   selectedItem: any;
 
-  constructor(private navCtrl: NavController, navParams: NavParams, private elementRef: ElementRef) {
+  constructor(private navCtrl: NavController, navParams: NavParams, private elementRef: ElementRef,
+              private shoppingListService: ShoppingListService) {
      this.selectedItem = navParams.get('item');
   }
 
@@ -22,16 +24,16 @@ export class DetailPage {
     let tagList = ingredientElements.getElementsByTagName('li');
     let ingredientsList = [];
     for (let el of tagList){
-      ingredientsList.push({text: el.innerHTML});
+      ingredientsList.push({text: el.innerHTML, checked: false});
     }
     let shoppingList = {
       recipeTitle : this.selectedItem.title.rendered,
       ingredientsList : ingredientsList
     }
 
-    this.navCtrl.push(ShoppingListPage, {
-      shoppingList: shoppingList
-    });
+    this.shoppingListService.addToList(shoppingList);
+
+    this.navCtrl.push(ShoppingListPage);
   }
 
 

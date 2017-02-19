@@ -11,9 +11,8 @@ export class ShoppingListService {
 
   private isDuplicate(item) {
      return this.shoppingList.find(function(listItem){
-         return item.title === listItem.title;
+         return item.recipeTitle === listItem.recipeTitle;
      })
-
   }
 
   addToList(item){
@@ -28,7 +27,6 @@ export class ShoppingListService {
   }
 
   deleteIngredient(recipeIndex, ingredientIndex){
-    debugger;
     this.shoppingList[recipeIndex].ingredientsList.splice(ingredientIndex, 1);
     return this.shoppingList;
   }

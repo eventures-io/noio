@@ -1,8 +1,8 @@
 keytool -genkey -v -keystore turnip-key.keystore -alias turnip -keyalg RSA -keysize 2048 -validity 10000
 
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore turnip-key.keystore build/outputs/apk/android-release-unsigned.apk turnip
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore turnip-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk turnip
 
 
- /usr/local/Cellar/android-sdk/24.4.1_1/build-tools/25.0.2/zipalign -v 4 build/outputs/apk/android-release-unsigned.apk turnip.apk 
+ /usr/local/Cellar/android-sdk/24.4.1_1/build-tools/25.0.2/zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk turnip.apk
 

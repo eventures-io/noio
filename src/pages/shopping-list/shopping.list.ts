@@ -11,10 +11,7 @@ export class ShoppingListPage {
   shoppingLists = [];
 
   constructor(private navCtrl:NavController, navParams:NavParams, private shoppingListService: ShoppingListService) {
-    let shoppingList = navParams.get('shoppingList');
-    if (shoppingList) {
-      this.shoppingListService.addToList(shoppingList);
-    }
+
     this.shoppingLists = this.shoppingListService.shoppingList;
   }
 

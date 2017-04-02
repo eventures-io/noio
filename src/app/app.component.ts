@@ -56,11 +56,11 @@ export class MyApp {
 
 
   hideSplashScreen() {
-    if (Splashscreen) {
+   // if (Splashscreen) {
       setTimeout(() => {
         Splashscreen.hide();
       }, 1000);
-    }
+    //}
   };
 
 }

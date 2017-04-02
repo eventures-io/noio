@@ -11,7 +11,7 @@
     <span class="list-loader">
       <ion-icon name="refresh"></ion-icon>
     </span>
-    <div class="list-item" *ngFor="let item of items" (swiperight)="showDetail(item)">
+    <div class="list-item" *ngFor="let item of items" (click)="showDetail(item)">
       <div class="item-info" [innerHTML]="item.excerpt.rendered">
       </div>
       <button class="view-item-button" (click)="showDetail(item)">
@@ -21,7 +21,7 @@
       'url(' + item.featuredImage + ')', 'back-ground-repeat': 'no-repeat', 'background-size': 'cover',
       'background-position': 'center'}" (swipeleft)="toggleShowMore(item)">
         <h3>{{item.title.rendered}}</h3>
-        <button class="more-button" (click)="toggleShowMore(item)">
+        <button class="more-button" (click)="toggleShowMore($event, item)">
           <ion-icon name="more"></ion-icon>
         </button>
       </div>

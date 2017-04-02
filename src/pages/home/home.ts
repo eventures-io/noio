@@ -53,7 +53,9 @@ export class HomePage {
     }, 500);
   }
 
-  toggleShowMore(item) {
+  toggleShowMore(event, item) {
+    //event.preventDefault();
+    event.stopPropagation();
     let showExcerpt = item.showExcerpt;
     this.resetShowExcerpt();
     item.showExcerpt = !showExcerpt;
@@ -65,9 +67,9 @@ export class HomePage {
     });
   }
 
-  swipeLeftEvent(event, item) {
-    this.toggleShowMore(item);
-  }
+  //swipeLeftEvent(event, item) {
+  //  this.toggleShowMore(event, item);
+  //}
 
   presentFilterOptions() {
     let actionSheet = this.actionSheetCtrl.create({
